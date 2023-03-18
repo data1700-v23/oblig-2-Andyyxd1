@@ -1,11 +1,12 @@
 Oblig 2
 =======
-OsloMet brukernavn: 
+OsloMet brukernavn: S374209
 
-GitHub brukernavn: 
+GitHub brukernavn: Andyyxd1
 
 Github repo URL: 
 
-Fullt navn: 
+Fullt navn: Ky Andy Du Nguyen
 
 Kort beskrivelse av applikasjon (5-10 setninger):
+Kinobillett applikasjon som er kjørt ved hjelp av tjener, server program og JQ, JS og Java.
