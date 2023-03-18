@@ -8,36 +8,35 @@ function kjopBillett() {
         telefon: $("#tlf").val(),
         epostadresse: $("#epost").val()
     };
-
+    if (billett.fornavn !== "" && billett.etternavn !== "" && billett.telefon !== "" && billett.epostadresse !== "") {
+        $.post("/lagre", billett, function () {
+            hentAlle();
+        });
+    }
     if (billett.fornavn === "") {
-        $("#fornavn-feil").html("skriv inn gyldig verdi");
+        $('#fornavn-feil').html("skriv inn gyldig verdi");
         $('#fornavn-feil').css("color", "red");
+    } else {
+        $('#fornavn-feil').html("");
     }
     if (billett.etternavn === "") {
-        $("#etternavn-feil").html("skriv inn gyldig verdi");
+        $('#etternavn-feil').html("skriv inn gyldig verdi");
         $('#etternavn-feil').css("color", "red");
+    } else {
+        $("#etternavn-feil").html("");
     }
     if (billett.telefon === "") {
         $("#tlf-feil").html("skriv inn gyldig verdi");
         $('#tlf-feil').css("color", "red");
+    } else {
+        $('#tlf-feil').html("");
     }
     if (billett.epostadresse === "") {
-        $("#epost-feil").html("skriv inn gyldig verdi");
+        $('#epost-feil').html("skriv inn gyldig verdi");
         $('#epost-feil').css("color", "red");
-    } else if (billett.fornavn !== "" && billett.etternavn !== "" && billett.telefon !== "" && billett.epostadresse !== "") {
-        $('#fornavn-feil').html("");
-        $('#etternavn-feil').html("");
+    } else {
         $('#epost-feil').html("");
-        $('#tlf-feil').html("");
-        $('#tlf').val("");
-        $('#fornavn').val("");
-        $('#etternavn').val("");
-        $('#epost').val("");
     }
-
-        $.post("/lagre", billett, function () {
-            hentAlle();
-        });
 }
 
 function hentAlle() {
